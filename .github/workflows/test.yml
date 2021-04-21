@@ -16,7 +16,7 @@ jobs:
       - name: Update runc (temporary fix) # TODO: Remove step when https://github.com/actions/virtual-environments/issues/2658 fixed
         uses: nick-invision/retry@v2
         with:
-          timeout_seconds: 15
+          timeout_minutes: 60
           max_attempts: 3
           retry_on: error
           command: |
