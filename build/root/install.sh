@@ -59,7 +59,7 @@ download_filename="airsonic.war"
 # download airsonic
 github.sh --install-path "/opt/airsonic" --github-owner "airsonic-advanced" --github-repo "airsonic-advanced" --download-assets "airsonic.war" --query-type "release"
 
-# download statically linked ffmpeg (used by rutorrent screenshots plugin)
+# download statically linked ffmpeg
 ffmpeg_package_name="ffmpeg-release-static.tar.xz"
 rcurl.sh -o "/tmp/${ffmpeg_package_name}" "https://github.com/binhex/arch-packages/raw/master/static/${OS_ARCH}/${ffmpeg_package_name}"
 
