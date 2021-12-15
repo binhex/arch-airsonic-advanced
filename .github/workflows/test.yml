@@ -39,7 +39,7 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           platforms: linux/386, linux/amd64, linux/arm/v6, linux/arm/v7, linux/arm64
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/arch-rtorrentvpn
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/arch-airsonic-advanced:test
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
       - name: Verify
