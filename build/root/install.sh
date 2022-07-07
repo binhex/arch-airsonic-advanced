@@ -58,6 +58,7 @@ source aur.sh
 ####
 
 # download airsonic
+export GH_TOKEN="${CR_PAT}"
 release=$(gh release list --repo airsonic-advanced/airsonic-advanced | grep -P -m 1 'Pre-release' | xargs | rev | cut -d ' ' -f2 | rev)
 gh release download --repo airsonic-advanced/airsonic-advanced "${release}" --pattern '*war' --dir '/opt/airsonic'
 

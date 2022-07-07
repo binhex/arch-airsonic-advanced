@@ -77,7 +77,9 @@ jobs:
           max_attempts: 3
           retry_wait_seconds: 120
           command: |
+            export DOCKER_BUILDKIT=1
             docker build \
+              --secret id=CR_PAT,env=${{ secrets.CR_PAT }} \
               --tag ${{ github.repository }}:${{ steps.generate_temporary_tag_name.outputs.test_tag }} \
               --tag ${{ github.repository }}:latest \
               --tag ${{ github.repository }}:${{ steps.identify_github_release_tag_name.outputs.tag }} \
