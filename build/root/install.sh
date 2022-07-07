@@ -38,7 +38,7 @@ fi
 ####
 
 # define pacman packages
-pacman_packages="libcups fontconfig libx264 libvpx"
+pacman_packages="libcups fontconfig libx264 libvpx github-cli"
 
 # install compiled packages using pacman
 if [[ ! -z "${pacman_packages}" ]]; then
@@ -58,7 +58,8 @@ source aur.sh
 ####
 
 # download airsonic
-github.sh --install-path "/opt/airsonic" --github-owner "airsonic-advanced" --github-repo "airsonic-advanced" --download-assets "airsonic.war" --query-type "release"
+release=$(gh release list --repo airsonic-advanced/airsonic-advanced | grep -P -m 1 'Pre-release' | xargs | rev | cut -d ' ' -f2 | rev)
+gh release download --repo airsonic-advanced/airsonic-advanced "${release}" --pattern '*war' --dir '/opt/airsonic'
 
 # download statically linked ffmpeg
 ffmpeg_package_name="ffmpeg-release-static.tar.xz"
