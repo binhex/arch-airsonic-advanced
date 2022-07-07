@@ -7,7 +7,7 @@ set -e
 release_tag_name="${1//-[0-9][0-9]/}"
 
 # set secret
-GH_TOKEN="${2}"
+export GH_TOKEN="${2}"
 
 # build scripts
 ####
