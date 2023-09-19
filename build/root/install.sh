@@ -56,7 +56,7 @@ gh release download --repo airsonic-advanced/airsonic-advanced "${release}" --pa
 
 # download statically linked ffmpeg
 ffmpeg_package_name="ffmpeg-release-static.tar.xz"
-rcurl.sh -o "/tmp/${ffmpeg_package_name}" "https://github.com/binhex/packages/raw/master/static/${OS_ARCH}/ffmpeg/johnvansickle/${ffmpeg_package_name}"
+rcurl.sh -o "/tmp/${ffmpeg_package_name}" "https://github.com/binhex/packages/raw/master/static/${TARGETARCH}/ffmpeg/johnvansickle/${ffmpeg_package_name}"
 
 # unpack and move binaries
 mkdir -p "/tmp/unpack" && tar -xvf "/tmp/${ffmpeg_package_name}" -C "/tmp/unpack"
