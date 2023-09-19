@@ -22,7 +22,7 @@ ADD run/nobody/*.sh /home/nobody/
 
 # make executable and run bash scripts to install app
 RUN chmod +x /root/*.sh /home/nobody/*.sh && \
-	/bin/bash /root/install.sh "${release_tag_name}" "${CR_PAT}"
+	/bin/bash /root/install.sh "${RELEASETAG}" "${CR_PAT}"
 
 # docker settings
 #################
